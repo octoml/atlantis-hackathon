@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ "$(uname)" == "Darwin" ]; then
+    ./atlantis-executables/atlantis.darwin $*
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    ./atlantis-executables/atlantis.linux $*
+else
+    echo "Unknown OS $(uname)"
+    exit 1
+fi

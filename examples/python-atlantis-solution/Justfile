@@ -8,7 +8,15 @@ install-tools:
     rustup install stable
 
 run:
-    ../../atlantis-executables/atlantis.darwin  single-run --  poetry run python3 main.py
+    #!/usr/bin/env bash
+
+    if [[ "{{os()}}" == "linux" ]]; then
+        ../../atlantis-executables/atlantis.linux  single-run --  poetry run python3 main.py
+    elif [[ "{{os()}}" == "macos" ]]; then
+        ../../atlantis-executables/atlantis.darwin  single-run --  poetry run python3 main.py
+    else
+        ../../atlantis-executables/atlantis.windows.exe  single-run --  poetry run python3 main.py
+    fi
 
 build-docker:
     docker build . -t atlantis-submission:latest
@@ -19,7 +27,7 @@ prepare-submission:
 
     rm -rf build
     mkdir -p build/atlantis-solution
-    cp *.py *.toml *.lock Dockerfile build/atlantis-solution/
+    cp *.py *.toml *.lock Dockerfile Justfile build/atlantis-solution/
     cd build
     tar czf atlantis-solution.tar.gz atlantis-solution
 

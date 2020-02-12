@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Run
+# docker build -t atlantis:latest .
+# before trying to run this!
+
+docker run -i --rm atlantis:latest ./atlantis $*

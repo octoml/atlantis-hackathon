@@ -60,7 +60,7 @@ Any nautiloid that doesn't get instructions will sit idle, and any instructions 
 The simulation will last 50 timesteps by default, but in general you should try to write your code to be generic over runtime duration (and the atlantis runner binary is configurable).
 
 ## What we are looking for
-While maximizing your score is a valuable pursuit, we value clean, readable code more highly. Especially if it is easy to come along and add more sophistication when and if we decide it makes more sense to optimize our nautiloid orchestration code for more pearl processing sophistication.
+Submissions will be ranked on their score from an `average-run` so make sure you test how well your solution performs across multiple runs!
 
 For testing, you can provide the path to your program binary or script (with no arguments) when running the atlantis simulator:
 ```

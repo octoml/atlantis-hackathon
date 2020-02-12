@@ -6,15 +6,15 @@ install-tools:
     source $HOME/.cargo/env
     rustup install stable
 
-run:
+run mode="single-run":
     #!/usr/bin/env bash
 
     if [[ "{{os()}}" == "linux" ]]; then
-        ../../atlantis-executables/atlantis.linux  single-run --  cargo run
+        ../../atlantis-executables/atlantis.linux {{mode}} --  cargo run
     elif [[ "{{os()}}" == "macos" ]]; then
-        ../../atlantis-executables/atlantis.darwin  single-run --  cargo run
+        ../../atlantis-executables/atlantis.darwin {{mode}} --  cargo run
     else
-        ../../atlantis-executables/atlantis.windows.exe  single-run --  cargo run
+        ../../atlantis-executables/atlantis.windows.exe  {{mode}} --  cargo run
     fi
 
 build-docker:

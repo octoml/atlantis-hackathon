@@ -78,6 +78,8 @@ for line in sys.stdin:
     print('{}', flush=True)
 ```
 
+See the examples directory for some starter projects.
+
 # Solution Submission
 
 Submit your solution(s) https://forms.gle/utQt8xdeDg9KY8Rz6 please make sure your submission runs as docker container .tgz files.

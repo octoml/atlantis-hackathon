@@ -13,6 +13,17 @@ https://github.com/casey/just
 
 Docker is recommended, as it makes evaluating your submissions easier. See: https://www.docker.com/products/docker-desktop
 
+## Clarifications!
+
+### Layers and noming
+Noming on a particular pearl consumes layers on the last pearl in the list of layers for that pearl. In one nom action, at most one layer in the list will be consumed.
+
+For example if you have vector type work consuming a pearl with layers `[{"color":"Red","thickness":12},{"color":"Green","thickness":1}]` the resulting layers after the nom will be `[{"color":"Red","thickness":12}]`.
+
+### Worker
+
+`SimState.neighbor_map` is an adjacency list for an directed graph where each node is a `worker_id`.
+
 ## Rules
 
 1. Submit you own work. Use of libraries or external packages are allowed.
@@ -99,3 +110,15 @@ See the examples directory for some starter projects.
 Submit your solution(s) https://forms.gle/utQt8xdeDg9KY8Rz6 please make sure your submission runs as docker container .tgz files.
 
 Scores will be posted to https://uw-hackathon-high-scores.now.sh/
+
+# Debugging Tips
+
+Outputting things to stdout will not work since the atlantis process is parsing that stream for actions. If you want to print out debug information use stderr.
+
+You can do this in python by:
+
+```python3
+import sys
+
+print("spam", file=sys.stderr)
+```

@@ -24,6 +24,10 @@ For example if you have vector type work consuming a pearl with layers `[{"color
 
 `SimState.neighbor_map` is an adjacency list for an directed graph where each node is a `worker_id`.
 
+### Scoring
+
+Leaving finished pearls (pearls with no more remaining layers) at the worker 0's desk to add to your score. It is ok that they are there. The score at final turn of the simulation is what determines your score for that run so don't pass them out again.
+
 ## Rules
 
 1. Submit you own work. Use of libraries or external packages are allowed.

@@ -1,5 +1,18 @@
 # Welcome to the Atlantis hackathon!
 
+## Tools
+
+### Rust + Just
+
+You will need to rust and the tool "just" installed to run the Justfiles, which are similar to make files.
+
+https://rustup.rs/
+https://github.com/casey/just
+
+### Docker
+
+Docker is recommended, as it makes evaluating your submissions easier. See: https://www.docker.com/products/docker-desktop
+
 ## Rules
 
 1. Submit you own work. Use of libraries or external packages are allowed.
@@ -46,7 +59,8 @@ At the beginning of each step of the simulation you (your program) will see (be 
 Here we see a small town of two nautiloids, where the `neighbor_map` gives us the connectivity of the workers (here showing us that worker 0 and 1 are adjacent and can thus pass pearls between each other).
 
 Another example with pearls would be:
-```{"workers":[{"id":0,"flavor":"General","desk":[{"id":3446798295,"layers":[{"color":"Blue","thickness":17}]},{"id":2747624543,"layers":[{"color":"Red","thickness":12},{"color":"Green","thickness":11},{"color":"Blue","thickness":11}]},{"id":1487224610,"layers":[{"color":"Red","thickness":10}]},{"id":2795188117,"layers":[{"color":"Blue","thickness":24},{"color":"Red","thickness":13},{"color":"Green","thickness":27}]}]},{"id":1,"flavor":"Vector","desk":[]}],"neighbor_map":[[0,1]],"score":0}
+```
+{"workers":[{"id":0,"flavor":"General","desk":[{"id":3446798295,"layers":[{"color":"Blue","thickness":17}]},{"id":2747624543,"layers":[{"color":"Red","thickness":12},{"color":"Green","thickness":11},{"color":"Blue","thickness":11}]},{"id":1487224610,"layers":[{"color":"Red","thickness":10}]},{"id":2795188117,"layers":[{"color":"Blue","thickness":24},{"color":"Red","thickness":13},{"color":"Green","thickness":27}]}]},{"id":1,"flavor":"Vector","desk":[]}],"neighbor_map":[[0,1]],"score":0}
 ```
 
 Your job is to pass instructions to the pearls through STDOUT in another JSON object of the form:
